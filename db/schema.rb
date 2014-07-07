@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140707014930) do
+ActiveRecord::Schema.define(version: 20140707204025) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20140707014930) do
   create_table "chess_inventories", force: true do |t|
     t.boolean  "entrytype"
     t.string   "partnumber"
-    t.integer  "lotnumber"
     t.integer  "quantity"
     t.integer  "shelfnumber"
     t.datetime "created_at"
