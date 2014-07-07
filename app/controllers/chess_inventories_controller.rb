@@ -25,15 +25,10 @@ class ChessInventoriesController < ApplicationController
   # POST /chess_inventories.json
   def create
     @chess_inventory = ChessInventory.new(chess_inventory_params)
-
-    respond_to do |format|
-      if @chess_inventory.save
-        format.html { redirect_to @chess_inventory, notice: 'Chess inventory was successfully created.' }
-        format.json { render :show, status: :created, location: @chess_inventory }
-      else
-        format.html { render :new }
-        format.json { render json: @chess_inventory.errors, status: :unprocessable_entity }
-      end
+    if @chess_inventory.save
+      redirect_to new_chess_inventory_path
+    else
+      render :new 
     end
   end
 
