@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  entrytype: false
+  partnumber: MyString
+  lotnumber: 1
+  quantity: 1
+  shelfnumber: 1
+
+two:
+  entrytype: false
+  partnumber: MyString
+  lotnumber: 1
+  quantity: 1
+  shelfnumber: 1

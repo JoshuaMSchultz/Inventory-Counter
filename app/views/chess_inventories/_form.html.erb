@@ -1,0 +1,37 @@
+<%= form_for(@chess_inventory) do |f| %>
+  <% if @chess_inventory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@chess_inventory.errors.count, "error") %> prohibited this chess_inventory from being saved:</h2>
+
+      <ul>
+      <% @chess_inventory.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :entrytype, "Transaction?" %><br>
+    <%= f.check_box :entrytype %>
+  </div>
+  <div class="field">
+    <%= f.label :partnumber, "Part Number" %><br>
+    <%= f.text_field :partnumber %>
+  </div>
+  <div class="field">
+    <%= f.label :lotnumber, "Lot Number" %><br>
+    <%= f.number_field :lotnumber %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity, "Quantity" %><br>
+    <%= f.number_field :quantity %>
+  </div>
+  <div class="field">
+    <%= f.label :shelfnumber, "Shelf Number" %><br>
+    <%= f.number_field :shelfnumber %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

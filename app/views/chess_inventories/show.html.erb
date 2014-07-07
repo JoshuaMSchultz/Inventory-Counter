@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Entry Type:</strong>
+  <%= @chess_inventory.entrytype %>
+</p>
+
+<p>
+  <strong>Part number:</strong>
+  <%= @chess_inventory.partnumber %>
+</p>
+
+<p>
+  <strong>Lot number:</strong>
+  <%= @chess_inventory.lotnumber %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @chess_inventory.quantity %>
+</p>
+
+<p>
+  <strong>Shelf number:</strong>
+  <%= @chess_inventory.shelfnumber %>
+</p>
+
+<%= link_to 'Edit', edit_chess_inventory_path(@chess_inventory) %> |
+<%= link_to 'Back', chess_inventories_path %>
