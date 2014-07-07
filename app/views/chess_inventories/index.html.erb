@@ -1,11 +1,11 @@
 <h1>Listing Chess Parts</h1>
 
-<table>
+
+<table id="parts">
   <thead>
     <tr>
       <th>Entry type</th>
       <th>Part number</th>
-      <th>Lot number</th>
       <th>Quantity</th>
       <th>Shelf number</th>
       <th colspan="3"></th>
@@ -17,7 +17,6 @@
       <tr>
         <td><%= chess_inventory.entrytype %></td>
         <td><%= chess_inventory.partnumber %></td>
-        <td><%= chess_inventory.lotnumber %></td>
         <td><%= chess_inventory.quantity %></td>
         <td><%= chess_inventory.shelfnumber %></td>
         <td><%= link_to 'Show', chess_inventory %></td>

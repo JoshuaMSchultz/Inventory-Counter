@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140707204025) do
+ActiveRecord::Schema.define(version: 20140707222718) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,9 +20,21 @@ ActiveRecord::Schema.define(version: 20140707204025) do
     t.boolean  "entrytype"
     t.string   "partnumber"
     t.integer  "quantity"
-    t.integer  "shelfnumber"
+    t.string   "shelfnumber"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "will_filter_filters", force: true do |t|
+    t.string   "type"
+    t.string   "name"
+    t.text     "data"
+    t.integer  "user_id"
+    t.string   "model_class_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "will_filter_filters", ["user_id"], name: "index_will_filter_filters_on_user_id", using: :btree
 
 end

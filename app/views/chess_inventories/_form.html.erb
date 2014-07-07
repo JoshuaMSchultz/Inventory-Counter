@@ -20,16 +20,12 @@
     <%= f.text_field :partnumber %>
   </div>
   <div class="field">
-    <%= f.label :lotnumber, "Lot Number" %><br>
-    <%= f.number_field :lotnumber %>
-  </div>
-  <div class="field">
     <%= f.label :quantity, "Quantity" %><br>
     <%= f.number_field :quantity %>
   </div>
   <div class="field">
     <%= f.label :shelfnumber, "Shelf Number" %><br>
-    <%= f.number_field :shelfnumber %>
+    <%= f.text_field :shelfnumber %>
   </div>
   <div class="actions">
     <%= f.submit %>

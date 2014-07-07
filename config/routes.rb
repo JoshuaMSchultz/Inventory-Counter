@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   root 'chess_inventories#index'
   resources :chess_inventories
 
