@@ -64,6 +64,6 @@ class ChessInventoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def chess_inventory_params
-      params.require(:chess_inventory).permit(:entrytype, :partnumber, :quantity, :shelfnumber,:location)
+      params.require(:chess_inventory).permit(:entrytype, :partnumber, :quantity,:location)
     end
 end
