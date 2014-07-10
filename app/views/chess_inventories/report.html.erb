@@ -17,7 +17,7 @@
     part.quantity
   end
   
-  g.column name: 'location', attribute: 'location' do |part|
+  g.column name: 'location', attribute: 'location', custom_filter: :auto do |part|
     part.location
   end
   
