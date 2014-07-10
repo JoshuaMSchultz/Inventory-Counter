@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   root 'chess_inventories#index'
   resources :chess_inventories
+  get 'report' => 'chess_inventories#report'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

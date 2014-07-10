@@ -1,0 +1,32 @@
+<h1>Parts Report</h1>
+
+<%= link_to 'Index', chess_inventories_path %>
+
+<%= grid(@parts_grid) do |g|
+
+  g.column name: "Entry Type", attribute: 'shipment_type',
+         custom_filter: {'Counts' => 1, 'Incoming' => 2, 'Outgoing' => 3}, auto_reload: true do |part|
+    part.shipment_plain_english
+  end
+
+  g.column name: 'Part Number', attribute: 'partnumber' do |part|
+    part.partnumber
+  end
+
+  g.column name: 'Quantity' do |part|
+    part.quantity
+  end
+  
+  g.column name: 'location', attribute: 'location' do |part|
+    part.location
+  end
+  
+  g.column name: "Date Added", attribute: 'created_at', helper_style: :calendar do |part|
+    part.created_at.strftime("%d/%m/%Y")
+  end
+  
+  
+  
+end -%>
+
+

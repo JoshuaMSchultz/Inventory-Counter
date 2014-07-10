@@ -26,17 +26,4 @@ ActiveRecord::Schema.define(version: 20140710004331) do
     t.string   "location"
     t.integer  "shipment_type"
   end
-
-  create_table "will_filter_filters", force: true do |t|
-    t.string   "type"
-    t.string   "name"
-    t.text     "data"
-    t.integer  "user_id"
-    t.string   "model_class_name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "will_filter_filters", ["user_id"], name: "index_will_filter_filters_on_user_id", using: :btree
-
 end

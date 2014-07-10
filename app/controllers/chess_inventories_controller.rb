@@ -7,6 +7,15 @@ class ChessInventoriesController < ApplicationController
   def index
     @chess_inventories = ChessInventory.all
   end
+  
+  def report
+    @parts_grid = initialize_grid(ChessInventory,
+    name:                 'g1',
+    enable_export_to_csv: true,
+    csv_file_name:        'Part List')
+    
+    export_grid_if_requested('g1' => 'parts_grid')
+  end
 
   # GET /chess_inventories/1
   # GET /chess_inventories/1.json
