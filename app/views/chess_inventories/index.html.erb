@@ -10,20 +10,19 @@
       <th>Part number</th>
       <th>Quantity</th>
       <th>Location</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @chess_inventories.each do |chess_inventory| %>
+    <% @chess_inventories.order('created_at DESC').each do |chess_inventory| %>
       <tr>
         <td><%= chess_inventory.shipment_plain_english %></td>
-        <td><%= chess_inventory.partnumber %></td>
+        <td><%= link_to chess_inventory.partnumber, chess_inventory %></td>
         <td><%= chess_inventory.quantity %></td>
         <td><%= chess_inventory.location %></td>
-        <td><%= link_to 'Show', chess_inventory %></td>
-        <td><%= link_to 'Edit', edit_chess_inventory_path(chess_inventory) %></td>
-        <td><%= link_to 'Destroy', chess_inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td></td>
+        <td><%= link_to 'Delete', chess_inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
