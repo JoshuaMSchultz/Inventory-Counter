@@ -22,7 +22,7 @@
   end
   
   g.column name: "Date Added", attribute: 'created_at', helper_style: :calendar, auto_reload: true do |part|
-    part.created_at.strftime("%d/%m/%Y")
+    part.created_at.strftime("%m/%d/%Y")
   end
   
   
