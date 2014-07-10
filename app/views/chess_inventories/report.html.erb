@@ -1,8 +1,13 @@
 <h1>Parts Report</h1>
 
 <%= link_to 'Index', chess_inventories_path %>
+<br>
+<div class="external-buttons">
+<button class="btn btn-primary wg-external-submit-button" data-grid-name="g1">Submit</button>
+<button class="btn wg-external-reset-button" data-grid-name="g1">Reset</button>
+</div>
 
-<%= grid(@parts_grid) do |g|
+<%= grid(@parts_grid, hide_submit_button: true, hide_reset_button: true) do |g|
 
   g.column name: "Entry Type", attribute: 'shipment_type',
          custom_filter: {'Counts' => 1, 'Incoming' => 2, 'Outgoing' => 3}, auto_reload: true do |part|
@@ -24,8 +29,6 @@
   g.column name: "Date Added", attribute: 'created_at', helper_style: :calendar, auto_reload: true do |part|
     part.created_at.strftime("%m/%d/%Y")
   end
-  
-  
   
 end -%>
 
