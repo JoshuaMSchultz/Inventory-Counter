@@ -1,5 +1,6 @@
 class ChessInventoriesController < ApplicationController
   before_action :set_chess_inventory, only: [:show, :edit, :update, :destroy]
+  
 
   # GET /chess_inventories
   # GET /chess_inventories.json
@@ -14,7 +15,7 @@ class ChessInventoriesController < ApplicationController
 
   # GET /chess_inventories/new
   def new
-    @chess_inventory = ChessInventory.new
+    @chess_inventory = ChessInventory.new(:shipment_type => 1)
   end
 
   # GET /chess_inventories/1/edit
@@ -25,6 +26,7 @@ class ChessInventoriesController < ApplicationController
   # POST /chess_inventories.json
   def create
     @chess_inventory = ChessInventory.new(chess_inventory_params)
+    params[:shipment_type] = params[:shipment_type].to_i
     if @chess_inventory.save
       redirect_to new_chess_inventory_path
     else
@@ -64,6 +66,6 @@ class ChessInventoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def chess_inventory_params
-      params.require(:chess_inventory).permit(:entrytype, :partnumber, :quantity,:location)
+      params.require(:chess_inventory).permit(:entrytype, :partnumber, :quantity,:location, :shipment_type)
     end
 end

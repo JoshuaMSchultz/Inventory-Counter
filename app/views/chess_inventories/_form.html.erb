@@ -16,6 +16,14 @@
     <%= f.check_box :entrytype %>
   </div>
   <div class="field">
+    <%= f.radio_button(:shipment_type, 1) %> 
+    <%= f.label(:shipment_type_1, "Counting") %>
+    <%= f.radio_button(:shipment_type, 2) %>
+    <%= f.label(:shipment_type_2, "Shipment: Incoming") %>
+    <%= f.radio_button(:shipment_type, 3) %>
+    <%= f.label(:shipment_type_3, "Shipment: Outgoing") %>
+  </div>
+  <div class="field">
     <%= f.label :partnumber, "Part Number" %><br>
     <%= f.text_field :partnumber %>
   </div>

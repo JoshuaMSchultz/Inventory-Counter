@@ -17,7 +17,7 @@
   <tbody>
     <% @chess_inventories.each do |chess_inventory| %>
       <tr>
-        <td><%= chess_inventory.entrytype %></td>
+        <td><%= chess_inventory.shipment_plain_english %></td>
         <td><%= chess_inventory.partnumber %></td>
         <td><%= chess_inventory.quantity %></td>
         <td><%= chess_inventory.location %></td>
