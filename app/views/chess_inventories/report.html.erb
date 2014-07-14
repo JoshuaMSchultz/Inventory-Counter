@@ -15,7 +15,7 @@
   end
 
   g.column name: 'Part Number', attribute: 'partnumber' do |part|
-    part.partnumber
+    link_to part.partnumber, part
   end
 
   g.column name: 'Quantity' do |part|
