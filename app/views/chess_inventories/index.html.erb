@@ -29,8 +29,9 @@
                 rescue
                   chess_inventory.created_at
                 end %> 
-        <td><%= begin
-                  chess_inventory.created_at.strftime("%I:%M%p") 
+        <td><%= chess_inventory.created_at.strftime("%I:%M%p") 
+                begin
+                  fail "not correct datatype"
                 rescue
                   chess_inventory.created_at
                 end %> 
